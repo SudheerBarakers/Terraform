@@ -1,0 +1,32 @@
+# Terraform Scripts
+
+## vi main.tf
+
+resource "aws_instance" "web" {
+  ami           = "ami-06878d265978313ca"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "vm01"
+  }
+}
+
+
+## vi provider.tf
+
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.49.0"
+    }
+  }
+}
+
+provider "aws" {
+ access_key = "ASIAQQ33NYTPMUR7EC76"
+  secret_key = "jXXdsERjiEAwfRijjHvq7nr1OCIxp2IJYpvn1C0a"
+token = "FwoGZXIvYXdzEBcaDG4kg4nPkOnMp5sPCCK7AUMLf1jDhAuN89nowX+Dqiy0eokdbQTZKAescyvGDJjUnPv2OkLTfv8mKM2Dv71b7IepDNEbnKjjhxhg0+Tjo3Sws6xmhvzh11yx/2Ng6SNmQ3lTextQgvEQKp+OAphT3H/0NeVXhYzqa2Odn+m3CdsJ3uNoOThHSK2A3twf3xt4nineBuyYgrK1QdPwNu4GUP7m22GNFDxxatGCA0ByDYRM9jIWgAMPUrzOZc1rULL+sTKE55zOmSIddWwo347rnQYyLQtl1xQyJs+oatwXrMP6k0uRmZjuK01QkamqFDMg8G5D/3D+Wmv33zDmx0nBjw=="
+region = "us-east-1"
+}
